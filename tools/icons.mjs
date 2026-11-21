@@ -10,7 +10,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 
 const COLOR = '#448FF4';
 const PERIOD = 4200; // ms between replays
-const ICONS = { user: 0, sparkles: 300, layers: 700, code: 1100, chart: 1500, mail: 1900, heart: 2300 };
+const ICONS = { user: 0, milestone: 250, lock: 500, layers: 750, bolt: 1000, sparkles: 1250, 'graduation-cap': 1500, code: 1750, chart: 2000, mail: 2250, heart: 2500 };
 
 // Scale every keyframe stop of one @keyframes block by `k` and hold the final pose to 100%.
 function rescaleKeyframes(css, durations) {
