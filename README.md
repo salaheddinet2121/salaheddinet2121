@@ -6,12 +6,6 @@
   🇩🇿 &nbsp;<code>السلام عليكم</code> · <code>bonjour</code> · <code>hello</code>&nbsp; 🇫🇷
 </p>
 
-<p align="center">
-  I build and ship web products end to end, then automate everything around them:<br>
-  deploys, servers, security checks and the repetitive work, increasingly with AI agents.<br>
-  <b>20+ projects delivered</b> · <b>open to opportunities</b>
-</p>
-
 <h3><img src="assets/icons/user.svg" width="28" align="top" alt="">&nbsp; About me</h3>
 
 <picture>
