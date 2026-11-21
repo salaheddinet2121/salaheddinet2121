@@ -14,11 +14,17 @@
 
 <h3><img src="assets/icons/user.svg" width="28" align="top" alt="">&nbsp; About me</h3>
 
-<img src="assets/about.svg" width="100%" alt="About me: Salah Eddine M'hamda Bouloudani. DevOps enthusiast, full-stack developer, software engineer. Open to opportunities. Based in Montpellier, France, originally from Algeria. Studying at the University of Montpellier. 20+ projects delivered. Focus: automation and AI agents, prompt engineering, security. 3 internships: Octodet, GTFT, Sonatrach. Languages: Arabic, French, English.">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg">
+  <img src="assets/about-light.svg" width="100%" alt="About me: Salah Eddine M'hamda Bouloudani. DevOps enthusiast, full-stack developer, software engineer. Open to opportunities. Based in Montpellier, France, originally from Algeria. Studying at the University of Montpellier. 20+ projects delivered. Focus: automation and AI agents, prompt engineering, security. 3 internships: Octodet, GTFT, Sonatrach. Languages: Arabic, French, English.">
+</picture>
 
 <h3><img src="assets/icons/milestone.svg" width="28" align="top" alt="">&nbsp; Experience</h3>
 
-<img src="assets/experience.svg" width="100%" alt="Experience. Software Developer at Octodet, internship, remote, Jan to Jun 2025: automation, prompt engineering and AI agents; security and vulnerability management; built Scruti. Software Engineer at GTFT, internship in Illizi, Algeria, Dec 2024: network infrastructure, virtualization, server replication, disaster recovery, software deployment. Software Engineer at Sonatrach, internship in Skikda, Algeria, Jul 2024: automated server backup scripts, Oracle database administration, enterprise application support.">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/experience-dark.svg">
+  <img src="assets/experience-light.svg" width="100%" alt="Experience. Software Developer at Octodet, internship, remote, Jan to Jun 2025: automation, prompt engineering and AI agents; security and vulnerability management; built Scruti. Software Engineer at GTFT, internship in Illizi, Algeria, Dec 2024: network infrastructure, virtualization, server replication, disaster recovery, software deployment. Software Engineer at Sonatrach, internship in Skikda, Algeria, Jul 2024: automated server backup scripts, Oracle database administration, enterprise application support.">
+</picture>
 
 <h3><img src="assets/icons/lock.svg" width="28" align="top" alt="">&nbsp; Featured builds</h3>
 
