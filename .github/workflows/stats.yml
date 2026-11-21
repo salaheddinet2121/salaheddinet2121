@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Build assets/stats.svg
+      - name: Build stats cards
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Optional: a fine-grained token with read access to your private repos,
@@ -34,5 +34,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats.svg
+          git add assets/stats-light.svg assets/stats-dark.svg
           git diff --cached --quiet || (git commit -m "Refresh stats card" && git push)

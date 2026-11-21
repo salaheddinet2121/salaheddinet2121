@@ -1,30 +1,23 @@
-// Build assets/stats.svg from the GitHub GraphQL API: an ASCII terminal card with
-// contribution numbers, streaks, top languages and a Bayer-dithered heatmap.
-// No dependencies. Run by .github/workflows/stats.yml every day.
+// Build assets/stats-{light,dark}.svg from the GitHub GraphQL API: three big numbers
+// (contributions, current streak, longest streak) over a Bayer-dithered heatmap,
+// in Geist on a grey shell + card. No dependencies. Run daily by .github/workflows/stats.yml.
 //
 //   GITHUB_TOKEN=... node scripts/stats.mjs [login]
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 
 const LOGIN = process.argv[2] || process.env.PROFILE_LOGIN || 'salaheddinet2121';
 const TOKEN = process.env.GH_STATS_TOKEN || process.env.GITHUB_TOKEN;
 if (!TOKEN) throw new Error('Set GITHUB_TOKEN (or GH_STATS_TOKEN)');
+const FONT = readFileSync(new URL('../tools/fonts/Geist-Variable.woff2', import.meta.url)).toString('base64');
 
-const C = { bg: '#10102B', panel: '#14163A', line: '#2A2F66', ink: '#F9FCFF', muted: '#8FB8F8', dim: '#5F6A97', blue: '#448FF4', deep: '#1F67DA', pale: '#DEEFFF' };
+const THEMES = {
+  light: { shell: '#F5F5F5', card: '#FFFFFF', ink: '#161513', muted: '#57544D', line: '#E8E8E6', empty: '#EDEDEB', blue: '#448FF4', deep: '#1F67DA', glow: null },
+  dark: { shell: '#141417', card: '#0B0B0E', ink: '#F5F5F4', muted: '#8B877D', line: '#232329', empty: '#1A1A1F', blue: '#448FF4', deep: '#8FB8F8', glow: '#2B4BFF' },
+};
 
-const query = `query($login:String!){
-  user(login:$login){
-    createdAt
-    contributionsCollection{
-      contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount } } }
-      totalCommitContributions restrictedContributionsCount
-    }
-    repositories(ownerAffiliations:OWNER, first:100, orderBy:{field:PUSHED_AT,direction:DESC}){
-      totalCount
-      nodes{ isFork languages(first:6, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name } } } }
-    }
-  }
-}`;
-
+const query = `query($login:String!){ user(login:$login){
+  contributionsCollection{ contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount } } } }
+} }`;
 const res = await fetch('https://api.github.com/graphql', {
   method: 'POST',
   headers: { Authorization: `bearer ${TOKEN}`, 'Content-Type': 'application/json', 'User-Agent': 'profile-stats' },
@@ -32,107 +25,77 @@ const res = await fetch('https://api.github.com/graphql', {
 });
 const json = await res.json();
 if (json.errors || !json.data?.user) throw new Error(JSON.stringify(json.errors ?? json));
-const user = json.data.user;
-const cal = user.contributionsCollection.contributionCalendar;
-
-// ---- numbers -----------------------------------------------------------------
+const cal = json.data.user.contributionsCollection.contributionCalendar;
 const days = cal.weeks.flatMap(w => w.contributionDays);
-let longest = 0, run = 0;
-for (const d of days) { run = d.contributionCount ? run + 1 : 0; longest = Math.max(longest, run); }
-let current = 0;
+
+// ---- streaks ------------------------------------------------------------------------
+let longest = { n: 0, from: null, to: null }, run = { n: 0, from: null };
+for (const d of days) {
+  if (d.contributionCount) {
+    run = run.n ? { n: run.n + 1, from: run.from } : { n: 1, from: d.date };
+    if (run.n > longest.n) longest = { n: run.n, from: run.from, to: d.date };
+  } else run = { n: 0, from: null };
+}
+let current = { n: 0, from: null, to: null };
 for (let i = days.length - 1; i >= 0; i--) {
-  if (days[i].contributionCount) current++;
+  if (days[i].contributionCount) { current = { n: current.n + 1, from: days[i].date, to: current.to ?? days[i].date }; }
   else if (i === days.length - 1) continue; // today may still be empty
   else break;
 }
-const best = days.reduce((a, d) => (d.contributionCount > a.contributionCount ? d : a), days[0]);
-const activeDays = days.filter(d => d.contributionCount).length;
+const fmtDate = iso => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+const range = s => (s.n ? `${fmtDate(s.from)} – ${fmtDate(s.to)}` : 'start one today');
 
-const langBytes = new Map();
-for (const r of user.repositories.nodes) {
-  if (r.isFork) continue;
-  for (const e of r.languages.edges) langBytes.set(e.node.name, (langBytes.get(e.node.name) ?? 0) + e.size);
-}
-const totalBytes = [...langBytes.values()].reduce((a, b) => a + b, 0) || 1;
-const langs = [...langBytes].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([name, b]) => [name, b / totalBytes]);
-
-// ---- svg helpers -----------------------------------------------------------------
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const fmt = n => n.toLocaleString('en-US');
-const W = 900, PAD = 32, CH = 8.4; // CH: width of one monospace char at 14px
-const text = (x, y, s, fill = C.ink, extra = '') => `<text x="${x}" y="${y}" fill="${fill}" ${extra}>${esc(s)}</text>`;
-
-// Bayer 4x4: level n lights the n cells whose threshold is below n/16.
+// ---- svg --------------------------------------------------------------------------
+const W = 900, S = 12, PAD = 40;
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const B4 = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5];
-const LEVELS = [1, 4, 7, 11, 16];
-const patterns = LEVELS.map((lit, i) => {
-  const px = B4.map((t, k) => (t < lit ? `<rect x="${(k % 4) * 2.5}" y="${Math.floor(k / 4) * 2.5}" width="2.5" height="2.5"/>` : '')).join('');
-  const fill = i === 0 ? C.line : i === LEVELS.length - 1 ? C.pale : C.blue;
-  return `<pattern id="d${i}" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="${C.panel}"/><g fill="${fill}">${px}</g></pattern>`;
-}).join('');
-
+const LEVELS = [0, 5, 9, 13, 16];
 const max = Math.max(...days.map(d => d.contributionCount), 1);
 const level = n => (n === 0 ? 0 : Math.min(4, 1 + Math.floor(Math.sqrt(n / max) * 3.999)));
 
-// ---- layout -------------------------------------------------------------------
-const lines = [];
-let y = PAD + 30;
-const header = `┌─ ${LOGIN}@github ~ $ stats --year `;
-lines.push(text(PAD, y, header + '─'.repeat(Math.floor((W - 2 * PAD) / CH) - header.length - 1) + '┐', C.dim));
-y += 34;
+function render(t) {
+  const cw = W - 2 * S;
+  const colW = (cw - 2 * PAD) / 3;
+  const stats = [
+    { big: cal.totalContributions.toLocaleString('en-US'), label: 'Contributions', sub: 'in the last year' },
+    { big: String(current.n), label: 'Current streak', sub: range(current), accent: true },
+    { big: String(longest.n), label: 'Longest streak', sub: range(longest) },
+  ];
+  const top = S + PAD;
+  let body = stats.map((s, i) => {
+    const cx = S + PAD + colW * i + colW / 2;
+    const sep = i ? `<line x1="${S + PAD + colW * i}" y1="${top + 4}" x2="${S + PAD + colW * i}" y2="${top + 104}" stroke="${t.line}"/>` : '';
+    return sep +
+      `<text x="${cx}" y="${top + 52}" text-anchor="middle" font-size="46" font-weight="600" letter-spacing="-1.6" fill="${s.accent ? t.blue : t.ink}">${esc(s.big)}</text>` +
+      `<text x="${cx}" y="${top + 80}" text-anchor="middle" font-size="15" font-weight="500" fill="${t.ink}">${esc(s.label)}</text>` +
+      `<text x="${cx}" y="${top + 101}" text-anchor="middle" font-size="13" fill="${t.muted}">${esc(s.sub)}</text>`;
+  }).join('');
 
-const rows = [
-  ['contributions (last year)', fmt(cal.totalContributions)],
-  ['active days', `${activeDays}/${days.length}`],
-  ['current streak', `${current} day${current === 1 ? '' : 's'}`],
-  ['longest streak', `${longest} days`],
-  ['best day', `${best.contributionCount} on ${best.date}`],
-  ['repositories', fmt(user.repositories.totalCount)],
-];
-rows.forEach(([label, value], i) => {
-  const leader = ' ' + '.'.repeat(Math.max(2, 42 - label.length - value.length)) + ' ';
-  lines.push(`<text x="${PAD + 18}" y="${y + i * 24}"><tspan fill="${C.muted}">${esc(label)}</tspan><tspan fill="${C.dim}">${leader}</tspan><tspan fill="${C.ink}" font-weight="700">${esc(value)}</tspan></text>`);
-});
+  // heatmap: one Bayer-dithered cell per day
+  const patterns = LEVELS.map((lit, i) => {
+    const px = B4.map((th, k) => (th < lit ? `<rect x="${(k % 4) * 2.5}" y="${Math.floor(k / 4) * 2.5}" width="2.5" height="2.5"/>` : '')).join('');
+    return `<pattern id="d${i}" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="${t.empty}"/><g fill="${i === 4 ? t.deep : t.blue}">${px}</g></pattern>`;
+  }).join('');
+  const weeks = cal.weeks.length, gap = 3;
+  const cell = Math.floor((cw - 2 * PAD - (weeks - 1) * gap) / weeks);
+  const gx = S + (cw - (weeks * cell + (weeks - 1) * gap)) / 2, gy = top + 140;
+  body += `<line x1="${S + PAD}" y1="${gy - 18}" x2="${W - S - PAD}" y2="${gy - 18}" stroke="${t.line}"/>`;
+  body += cal.weeks.map((w, wi) => w.contributionDays.map(d => {
+    const dow = new Date(d.date + 'T00:00:00Z').getUTCDay();
+    return `<rect x="${gx + wi * (cell + gap)}" y="${gy + dow * (cell + gap)}" width="${cell}" height="${cell}" rx="2" fill="url(#d${level(d.contributionCount)})"><title>${d.date}: ${d.contributionCount}</title></rect>`;
+  }).join('')).join('');
+  const H = gy + 7 * (cell + gap) - gap + PAD + S;
 
-const rx = PAD + 18 + 47 * CH;
-lines.push(text(rx, y, '# top languages', C.dim));
-langs.forEach(([name, share], i) => {
-  const cells = 16, on = Math.max(1, Math.round(share * cells));
-  const bar = '█'.repeat(on) + '░'.repeat(cells - on);
-  const yy = y + (i + 1) * 24;
-  lines.push(`<text x="${rx}" y="${yy}"><tspan fill="${C.muted}">${esc(name.toLowerCase().padEnd(11).slice(0, 11))}</tspan><tspan fill="${C.blue}">${bar}</tspan><tspan fill="${C.ink}"> ${String(Math.round(share * 100)).padStart(2)}%</tspan></text>`);
-});
-y += rows.length * 24 + 18;
-
-// heatmap
-const cell = 12, gap = 2.6, gridX = PAD + 18;
-lines.push(text(PAD + 18, y, '# contributions, one dithered cell per day', C.dim));
-y += 14;
-const rects = cal.weeks.map((w, wi) => w.contributionDays.map((d) => {
-  const dow = new Date(d.date + 'T00:00:00Z').getUTCDay();
-  return `<rect x="${gridX + wi * (cell + gap)}" y="${y + dow * (cell + gap)}" width="${cell}" height="${cell}" fill="url(#d${level(d.contributionCount)})"><title>${d.date}: ${d.contributionCount}</title></rect>`;
-}).join('')).join('');
-lines.push(`<g>${rects}</g>`);
-y += 7 * (cell + gap) + 26;
-
-const legendX = W - PAD - 18 - 34 - 5 * 16;
-const legend = LEVELS.map((_, i) => `<rect x="${legendX + i * 16}" y="${y - 11}" width="12" height="12" fill="url(#d${i})"/>`).join('');
-const updated = new Date().toISOString().slice(0, 10);
-lines.push(text(PAD + 18, y, `updated ${updated} · via api.github.com/graphql`, C.dim));
-lines.push(text(legendX - 8, y, 'less', C.dim, 'text-anchor="end"'), legend, text(legendX + 5 * 16 + 4, y, 'more', C.dim));
-y += 26;
-lines.push(text(PAD, y, '└' + '─'.repeat(Math.floor((W - 2 * PAD) / CH) - 2) + '┘', C.dim));
-lines.push(`<text x="${PAD + 18}" y="${y + 30}" fill="${C.blue}">$ <tspan class="cur">█</tspan></text>`);
-const H = y + 50;
-const sideX = [PAD + 4, PAD + (Math.floor((W - 2 * PAD) / CH) - 1) * CH + 4];
-lines.push(sideX.map(x => `<line x1="${x}" y1="${PAD + 34}" x2="${x}" y2="${y - 14}" stroke="${C.dim}" stroke-width="1.2"/>`).join(''));
-
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="GitHub stats for ${LOGIN}: ${cal.totalContributions} contributions in the last year">
-<style>text{font:14px ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace;white-space:pre}.cur{animation:b 1.1s steps(1) infinite}@keyframes b{50%{opacity:0}}</style>
-<defs>${patterns}</defs>
-<rect width="${W}" height="${H}" rx="14" fill="${C.bg}"/>
-${lines.join('\n')}
+  const glow = t.glow ? `<radialGradient id="g" cx="88%" cy="0%" r="70%"><stop offset="0" stop-color="${t.glow}" stop-opacity=".28"/><stop offset="1" stop-color="${t.glow}" stop-opacity="0"/></radialGradient>` : '';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="GitHub stats for ${LOGIN}: ${cal.totalContributions} contributions in the last year, current streak ${current.n} days, longest streak ${longest.n} days">
+<defs><style>@font-face{font-family:Geist;src:url(data:font/woff2;base64,${FONT}) format('woff2');font-weight:100 900}
+text{font-family:Geist,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}</style>${patterns}${glow}</defs>
+<rect width="${W}" height="${H}" rx="28" fill="${t.shell}"/>
+<rect x="${S}" y="${S}" width="${cw}" height="${H - 2 * S}" rx="20" fill="${t.card}"/>
+${t.glow ? `<rect x="${S}" y="${S}" width="${cw}" height="${H - 2 * S}" rx="20" fill="url(#g)"/>` : ''}
+${body}
 </svg>`;
+}
 
-writeFileSync('assets/stats.svg', svg);
-console.log(`assets/stats.svg · ${cal.totalContributions} contributions · streak ${current}/${longest} · ${langs.map(l => l[0]).join(', ')}`);
+for (const [name, t] of Object.entries(THEMES)) writeFileSync(`assets/stats-${name}.svg`, render(t));
+console.log(`stats: ${cal.totalContributions} contributions · streak ${current.n} · longest ${longest.n}`);
