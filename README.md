@@ -123,22 +123,31 @@ salah eddine m'hamda bouloudani
 
 <h3><img src="assets/icons/code.svg" width="28" align="top" alt="">&nbsp; stack</h3>
 
-```text
-web ......... typescript · react · astro · next.js · tailwind · node
-devops ...... docker · coolify · ansible · github actions · cloudflare workers · linux · shell
-security .... osquery · elasticsearch · vulnerability management
-ai .......... llms · ai agents · crewai · prompt engineering · llmops
-data ........ oracle · sqlite · python · web scraping
-cloud ....... aws · azure
-design ...... figma · canva · ui / ux · design systems · branding
-              multilingual layouts: arabic (rtl) · french · english
-```
-
-<table align="center">
-  <tr><td align="right"><sub><code>web</code></sub></td><td><img src="https://skillicons.dev/icons?i=ts,react,astro,nextjs,tailwind,nodejs&theme=dark&perline=6" height="40" alt="TypeScript, React, Astro, Next.js, Tailwind, Node.js"></td></tr>
-  <tr><td align="right"><sub><code>devops</code></sub></td><td><img src="https://skillicons.dev/icons?i=docker,ansible,githubactions,cloudflare,linux,bash&theme=dark&perline=6" height="40" alt="Docker, Ansible, GitHub Actions, Cloudflare, Linux, Bash"></td></tr>
-  <tr><td align="right"><sub><code>data · cloud</code></sub></td><td><img src="https://skillicons.dev/icons?i=python,elasticsearch,sqlite,aws,azure&theme=dark&perline=6" height="40" alt="Python, Elasticsearch, SQLite, AWS, Azure"></td></tr>
-  <tr><td align="right"><sub><code>design</code></sub></td><td><img src="https://skillicons.dev/icons?i=figma&theme=dark" height="40" alt="Figma"></td></tr>
+<table>
+  <tr>
+    <td width="150"><b>Web</b></td>
+    <td><img src="https://skillicons.dev/icons?i=ts,react,astro,nextjs,tailwind,nodejs&theme=dark" height="36" alt="TypeScript, React, Astro, Next.js, Tailwind, Node.js"><br><sub>TypeScript, React, Astro, Next.js, Tailwind, Node.js</sub></td>
+  </tr>
+  <tr>
+    <td width="150"><b>DevOps</b></td>
+    <td><img src="https://skillicons.dev/icons?i=docker,ansible,githubactions,cloudflare,linux,bash&theme=dark" height="36" alt="Docker, Ansible, GitHub Actions, Cloudflare, Linux, Bash"><br><sub>Docker, Coolify, Ansible, GitHub Actions, Cloudflare Workers, Linux, Shell</sub></td>
+  </tr>
+  <tr>
+    <td width="150"><b>Security</b></td>
+    <td><img src="https://skillicons.dev/icons?i=elasticsearch&theme=dark" height="36" alt="Elasticsearch"><br><sub>osquery, Elasticsearch, vulnerability management</sub></td>
+  </tr>
+  <tr>
+    <td width="150"><b>AI & automation</b></td>
+    <td><img src="https://skillicons.dev/icons?i=python&theme=dark" height="36" alt="Python"><br><sub>Python, LLMs, AI agents, CrewAI, prompt engineering, LLMOps, web scraping</sub></td>
+  </tr>
+  <tr>
+    <td width="150"><b>Data & cloud</b></td>
+    <td><img src="https://skillicons.dev/icons?i=sqlite,aws,azure&theme=dark" height="36" alt="SQLite, AWS, Azure"><br><sub>Oracle, SQLite, AWS, Azure</sub></td>
+  </tr>
+  <tr>
+    <td width="150"><b>Design</b></td>
+    <td><img src="https://skillicons.dev/icons?i=figma&theme=dark" height="36" alt="Figma"><br><sub>Figma, Canva, UI/UX, design systems, branding<br>Multilingual layouts: Arabic (RTL), French, English</sub></td>
+  </tr>
 </table>
 
 <h3><img src="assets/icons/graduation-cap.svg" width="28" align="top" alt="">&nbsp; certifications</h3>
