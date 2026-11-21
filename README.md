@@ -18,12 +18,10 @@
 
 ## Experience
 
-- 🛡️ **Octodet** · Software Developer intern · Remote · *Jan → Jun 2025*<br>
-  Automation, prompt engineering and AI agents (LLMs, LLMOps, web scraping). Security and vulnerability management. Built **Scruti**.
-- 🌐 **GTFT** · Software Engineer intern · Illizi, Algeria · *Dec 2024*<br>
-  Network infrastructure, virtualization, server replication, disaster recovery and software deployment.
-- 🛢️ **Sonatrach** · Software Engineer intern · Skikda, Algeria · *Jul 2024*<br>
-  Automated server backup scripts, Oracle database administration, enterprise application support.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/experience-dark.svg">
+  <img src="assets/experience-light.svg" width="100%" alt="Experience. Software Developer at Octodet, internship, remote, Jan to Jun 2025: automation, prompt engineering and AI agents; security and vulnerability management; built Scruti. Software Engineer at GTFT, internship in Illizi, Algeria, Dec 2024: network infrastructure, virtualization, server replication, disaster recovery, software deployment. Software Engineer at Sonatrach, internship in Skikda, Algeria, Jul 2024: automated server backup scripts, Oracle database administration, enterprise application support.">
+</picture>
 
 ## Featured builds
 
@@ -34,16 +32,12 @@
 
 ## Client work
 
-<table>
-  <tr>
-    <td align="center" width="25%"><a href="https://scrollia.fr"><img src="assets/clients/scrollia.png" width="48" alt=""><br><b>Scrollia</b></a><br><sub>Marketing agency, FR / EN</sub></td>
-    <td align="center" width="25%"><img src="assets/clients/velytrix.png" width="48" alt=""><br><b>Velytrix</b><br><sub>Landing pages & local SEO, site + brand</sub></td>
-    <td align="center" width="25%"><a href="https://courageformation.fr"><img src="assets/clients/courage-formation.png" width="48" alt=""><br><b>Courage Formation</b></a><br><sub>Training centre site + funnel</sub></td>
-    <td align="center" width="25%"><img src="assets/clients/paroliamo.png" width="48" alt=""><br><b>Paroliamo</b><br><sub>Training centre, 4 languages</sub></td>
-  </tr>
-</table>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/clients-dark.svg">
+  <img src="assets/clients-light.svg" width="100%" alt="Client work: Scrollia, agency site for branding, growth and SEO in French and English; Velytrix, landing page and local SEO studio, site and brand; Courage Formation, training centre website and lead funnel; Paroliamo, training centre website in four languages. And 15+ more sites, landing pages, CRMs and automations.">
+</picture>
 
-<sub>…and 15+ more sites, landing pages, CRMs and automations for training centres, consultants and local businesses.</sub>
+<p align="center"><sub>Live: <a href="https://scrollia.fr">scrollia.fr</a> · <a href="https://courageformation.fr">courageformation.fr</a></sub></p>
 
 ## Side projects: Arabic UI
 
@@ -51,14 +45,17 @@
   <tr>
     <td width="50%" valign="top">
       <img src="assets/projects/florii.gif" width="100%" alt="The Arabic word في ازدهار with vines and pink flowers growing out of its letters"><br>
-      <b>Florii · فلوري</b><br>
-      Type a name and its letters grow into a garden, Arabic first.
+      <img src="assets/projects/florii-logo.svg" width="32" align="left" alt="Florii logo">&nbsp;<b>Florii · فلوري</b><br>
+      &nbsp;<sub>Type a name and its letters grow into a garden, Arabic first.</sub>
     </td>
     <td width="50%" valign="top">
       <img src="assets/projects/easticker.gif" width="100%" alt="Easticker: hand-drawn stickers (dallah, camel, Algerian flag, mint teapot, yaz, dates) popping onto the page"><br>
-      <b>Easticker · إيستيكر</b><br>
-      Hand-drawn React stickers with an Arabic soul.
+      <img src="assets/projects/easticker-logo.svg" width="32" align="left" alt="Easticker logo">&nbsp;<b>Easticker · إيستيكر</b><br>
+      &nbsp;<sub>Hand-drawn React stickers with an Arabic soul.</sub>
     </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">🚧 &nbsp;<b>More Arabic UI projects coming soon</b></td>
   </tr>
 </table>
 

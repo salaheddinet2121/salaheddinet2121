@@ -5,7 +5,8 @@
   "scripts": {
     "icons": "node tools/icons.mjs",
     "banner": "python3 tools/banner.py",
-    "stats": "node scripts/stats.mjs"
+    "stats": "node scripts/stats.mjs",
+    "cards": "python3 tools/cards.py"
   },
   "devDependencies": {
     "@unlocalhosted/dither-icons": "^0.2.6",
