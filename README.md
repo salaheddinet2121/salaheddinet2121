@@ -75,11 +75,11 @@
 
 | | Project | What I built | Stack |
 |:-:|---|---|---|
-| <img src="assets/clients/scrollia.png" width="40" alt="Scrollia logo"> | **[Scrollia](https://scrollia.fr)** | marketing agency: personal branding, growth & SEO, FR / EN | astro · tailwind · react |
-| <img src="assets/clients/velytrix.png" width="40" alt="Velytrix logo"> | **Velytrix** | landing pages & local SEO studio, website + full brand identity | astro · seo · branding |
-| <img src="assets/clients/courage-formation.png" width="40" alt="Courage Formation logo"> | **[Courage Formation](https://courageformation.fr)** | training organization website + lead funnel | astro · tailwind |
-| <img src="assets/clients/paroliamo.png" width="40" alt="Paroliamo logo"> | **Paroliamo** | training organization website in 4 languages | astro · typescript · i18n |
-| ➕ | **+ more** | sites, landing pages, CRMs and automations for training centres, consultants and local businesses | astro · ts · python |
+| <img src="assets/clients/scrollia.png" width="40" alt="Scrollia logo"> | **[Scrollia](https://scrollia.fr)** | Marketing agency site: personal branding, growth & SEO, in French and English | Astro, Tailwind, React |
+| <img src="assets/clients/velytrix.png" width="40" alt="Velytrix logo"> | **Velytrix** | Landing page & local SEO studio: website and full brand identity | Astro, SEO, branding |
+| <img src="assets/clients/courage-formation.png" width="40" alt="Courage Formation logo"> | **[Courage Formation](https://courageformation.fr)** | Training organization website and lead funnel | Astro, Tailwind |
+| <img src="assets/clients/paroliamo.png" width="40" alt="Paroliamo logo"> | **Paroliamo** | Training organization website in 4 languages | Astro, TypeScript, i18n |
+| ➕ | **And more** | Sites, landing pages, CRMs and automations for training centres, consultants and local businesses | Astro, TypeScript, Python |
 
 <h3><img src="assets/icons/sparkles.svg" width="28" align="top" alt="">&nbsp; Side projects: Arabic UI</h3>
 
@@ -89,13 +89,13 @@
       <img src="assets/projects/florii.gif" width="100%" alt="The Arabic word في ازدهار with vines and pink flowers growing out of its letters">
       <p><b>Florii · فلوري</b> &nbsp;<sub><code>html</code> <code>canvas</code> <code>cloudflare workers</code></sub></p>
       <p>Type a name and its letters grow into a garden. Arabic first: words are shaped and joined properly, stems sprout from each letter's strokes, and harakat turn into buds, star flowers and dew.</p>
-      <p><sub>poster & wallpaper export · eid / ramadan cards · name meanings · nature sounds</sub></p>
+      <p><sub>Poster & wallpaper export · Eid / Ramadan cards · name meanings · nature sounds</sub></p>
     </td>
     <td width="50%" valign="top">
       <img src="assets/projects/easticker.gif" width="100%" alt="Easticker: hand-drawn stickers (dallah, camel, Algerian flag, mint teapot, yaz, dates) popping onto the page">
       <p><b>Easticker · إيستيكر</b> &nbsp;<sub><code>react</code> <code>typescript</code> <code>astro</code> <code>npm</code></sub></p>
       <p>Hand-drawn React stickers with an Arabic soul: calligraphy words, heritage objects and desert animals, each with a die-cut border and a vinyl peel effect.</p>
-      <p><sub>sticker packs (algeria 🇩🇿, saudi arabia) · sticker lab for posts & stories · en / ar</sub></p>
+      <p><sub>Sticker packs: Algeria 🇩🇿, Saudi Arabia · Sticker Lab for posts & stories · English / Arabic</sub></p>
     </td>
   </tr>
 </table>
