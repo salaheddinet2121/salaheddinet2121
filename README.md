@@ -12,68 +12,68 @@
   <b>20+ projects delivered</b> · <b>open to opportunities</b>
 </p>
 
-<h3><img src="assets/icons/user.svg" width="28" align="top" alt="">&nbsp; whoami</h3>
+<h3><img src="assets/icons/user.svg" width="28" align="top" alt="">&nbsp; About me</h3>
 
-```text
-$ whoami
-salah eddine m'hamda bouloudani
+- **Based in:** Montpellier, France 🇫🇷 · originally from Algeria 🇩🇿
+- **Studying at:** University of Montpellier
+- **Roles:** DevOps enthusiast · Full-stack developer · Software engineer
+- **Focus:** Automation, prompt engineering, AI agents and security
+- **Track record:** 20+ web projects delivered for clients
+- **Languages:** Arabic, French, English
+- **Status:** Open to opportunities
 
-  from ......... algeria
-  based in ..... montpellier, france
-  studies ...... university of montpellier
-  role ......... devops enthusiast · full-stack developer · software engineer
-  focus ........ automation · prompt engineering · ai agents · security
-  delivered .... 20+ web projects for clients
-  speaks ....... arabic · french · english
-  status ....... open to opportunities
-```
+<h3><img src="assets/icons/milestone.svg" width="28" align="top" alt="">&nbsp; Experience</h3>
 
-<h3><img src="assets/icons/milestone.svg" width="28" align="top" alt="">&nbsp; experience</h3>
+**Software Developer · Octodet**<br>
+<sub>Internship · Remote · Jan 2025 → Jun 2025</sub>
+- Automation, prompt engineering and AI agents (LLMs, LLMOps, web scraping)
+- Security and vulnerability management with osquery, Elasticsearch, Ansible and Python
+- Built **Scruti** (see Featured builds)
 
-```text
-2025.01 → 2025.06   software developer · octodet                internship · remote
-                    automation, prompt engineering, ai agents, llms / llmops,
-                    web scraping, security & vulnerability management
-                    (osquery · elasticsearch · ansible · python)
-                    └─ built scruti, see featured builds
+**Software Engineer · GTFT**<br>
+<sub>Internship · Illizi, Algeria · Dec 2024</sub>
+- Network infrastructure and virtualization for server management
+- Server replication, risk prevention and disaster recovery
+- Software management and deployment
 
-2024.12             software engineer · gtft                    internship · illizi, dz
-                    network infrastructure, virtualization, server replication,
-                    risk prevention & disaster recovery, software deployment
+**Software Engineer · Sonatrach**<br>
+<sub>Internship · Skikda, Algeria · Jul 2024</sub>
+- Wrote automated backup scripts (shell) for the company's servers
+- Oracle database administration: monitoring, maintenance, security
+- Supported the infrastructure team on enterprise applications
 
-2024.07             software engineer · sonatrach               internship · skikda, dz
-                    automated server backup scripts (shell), oracle database
-                    administration, support for enterprise applications
-```
+<h3><img src="assets/icons/lock.svg" width="28" align="top" alt="">&nbsp; Featured builds</h3>
 
-<h3><img src="assets/icons/lock.svg" width="28" align="top" alt="">&nbsp; featured builds</h3>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <p><b>Scrollia Automation</b><br><sub>Automation · in production</sub></p>
+      <p>End-to-end social media pipeline for the Scrollia agency, with a dashboard to review, reschedule and retry posts.</p>
+      <ol>
+        <li>Pulls content from Google Drive</li>
+        <li>Writes captions with AI and renders branded thumbnails</li>
+        <li>Schedules and publishes to several platforms</li>
+        <li>Checks every post went out, and retries the ones that didn't</li>
+      </ol>
+      <p><code>python</code> <code>fastapi</code> <code>next.js</code> <code>llms</code> <code>zernio api</code> <code>gohighlevel api</code> <code>docker</code> <code>coolify</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <p><b>Scruti</b><br><sub>Security · built at Octodet</sub></p>
+      <p>Security and vulnerability management project.</p>
+      <ul>
+        <li>Visibility on machines with osquery</li>
+        <li>Vulnerability data collected and searched in Elasticsearch</li>
+        <li>Automated response with Ansible</li>
+        <li>LLMs and AI agents in the loop</li>
+      </ul>
+      <p><code>osquery</code> <code>elasticsearch</code> <code>ansible</code> <code>python</code> <code>llms</code></p>
+    </td>
+  </tr>
+</table>
 
-```text
-+---------------------------------------------------------------------------+
-|  SCROLLIA AUTOMATION                           automation · in production |
-|                                                                           |
-|  end-to-end social media pipeline for the scrollia agency:                |
-|    google drive intake  ->  ai captions & branded thumbnails              |
-|    ->  scheduling  ->  multi-platform publishing  ->  reconciliation      |
-|  with a next.js dashboard to review, reschedule and retry posts.          |
-|                                                                           |
-|  python · fastapi · next.js · llms · zernio & gohighlevel apis            |
-|  docker · coolify                                                         |
-+---------------------------------------------------------------------------+
+<h3><img src="assets/icons/bolt.svg" width="28" align="top" alt="">&nbsp; Client work &nbsp;<sub>20+ delivered</sub></h3>
 
-+---------------------------------------------------------------------------+
-|  SCRUTI                                       security · built at octodet |
-|                                                                           |
-|  security & vulnerability management project: visibility on machines,     |
-|  vulnerability tracking and automated response.                           |
-|                                                                           |
-|  osquery · elasticsearch · ansible · python · llms / ai agents            |
-+---------------------------------------------------------------------------+
-```
-
-<h3><img src="assets/icons/bolt.svg" width="28" align="top" alt="">&nbsp; client work &nbsp;<sub>20+ delivered</sub></h3>
-
-| | project | what | stack |
+| | Project | What I built | Stack |
 |:-:|---|---|---|
 | <img src="assets/clients/scrollia.png" width="40" alt="Scrollia logo"> | **[Scrollia](https://scrollia.fr)** | marketing agency: personal branding, growth & SEO, FR / EN | astro · tailwind · react |
 | <img src="assets/clients/velytrix.png" width="40" alt="Velytrix logo"> | **Velytrix** | landing pages & local SEO studio, website + full brand identity | astro · seo · branding |
@@ -81,7 +81,7 @@ salah eddine m'hamda bouloudani
 | <img src="assets/clients/paroliamo.png" width="40" alt="Paroliamo logo"> | **Paroliamo** | training organization website in 4 languages | astro · typescript · i18n |
 | ➕ | **+ more** | sites, landing pages, CRMs and automations for training centres, consultants and local businesses | astro · ts · python |
 
-<h3><img src="assets/icons/sparkles.svg" width="28" align="top" alt="">&nbsp; side projects: arabic ui</h3>
+<h3><img src="assets/icons/sparkles.svg" width="28" align="top" alt="">&nbsp; Side projects: Arabic UI</h3>
 
 <table>
   <tr>
@@ -100,28 +100,17 @@ salah eddine m'hamda bouloudani
   </tr>
 </table>
 
-<h3><img src="assets/icons/layers.svg" width="28" align="top" alt="">&nbsp; what i'm into</h3>
+<h3><img src="assets/icons/layers.svg" width="28" align="top" alt="">&nbsp; What I'm into</h3>
 
-```text
-+------------------------------+----------------------------------------------+
-| devops                       | ci/cd, servers, virtualization, backups and  |
-|                              | deploys at the edge                          |
-+------------------------------+----------------------------------------------+
-| security                     | vulnerability management, endpoint           |
-|                              | visibility, keeping things locked down       |
-+------------------------------+----------------------------------------------+
-| automation & ai agents       | multi-agent systems, prompt engineering,     |
-|                              | scripts that do the boring parts             |
-+------------------------------+----------------------------------------------+
-| arabic ui design  <- focus   | right-to-left interfaces, arabic type and    |
-|                              | lettering, heritage motifs in modern ui      |
-+------------------------------+----------------------------------------------+
-| ui & creative coding         | design systems, shaders, dithering           |
-|                              | (the banner above is one)                    |
-+------------------------------+----------------------------------------------+
-```
+| Interest | What that means |
+|---|---|
+| **DevOps** | CI/CD, servers, virtualization, backups, deploys at the edge |
+| **Security** | Vulnerability management, endpoint visibility, keeping things locked down |
+| **Automation & AI agents** | Multi-agent systems, prompt engineering, scripts that do the boring parts |
+| **Arabic UI design** ⭐ | Right-to-left interfaces, Arabic type and lettering, heritage motifs in modern UI |
+| **UI & creative coding** | Design systems, shaders, dithering (the banner above is one) |
 
-<h3><img src="assets/icons/code.svg" width="28" align="top" alt="">&nbsp; stack</h3>
+<h3><img src="assets/icons/code.svg" width="28" align="top" alt="">&nbsp; Stack</h3>
 
 <table>
   <tr>
@@ -150,32 +139,28 @@ salah eddine m'hamda bouloudani
   </tr>
 </table>
 
-<h3><img src="assets/icons/graduation-cap.svg" width="28" align="top" alt="">&nbsp; certifications</h3>
+<h3><img src="assets/icons/graduation-cap.svg" width="28" align="top" alt="">&nbsp; Certifications</h3>
 
-```text
-2025.11   evaluating ai agents: from metrics to real-world impact   365 data science
-2025.11   intro to microsoft azure                                  365 data science
-2025.02   multi agent systems                                       crewai
-2024.12   aws academy graduate: cloud foundations                   aws academy
-```
+| Date | Certificate | Issuer |
+|---|---|---|
+| Nov 2025 | Evaluating AI Agents: From Metrics to Real-World Impact | 365 Data Science |
+| Nov 2025 | Intro to Microsoft Azure | 365 Data Science |
+| Feb 2025 | Multi Agent Systems | CrewAI |
+| Dec 2024 | AWS Academy Graduate: Cloud Foundations | AWS Academy |
 
-<h3><img src="assets/icons/chart.svg" width="28" align="top" alt="">&nbsp; activity</h3>
+<h3><img src="assets/icons/chart.svg" width="28" align="top" alt="">&nbsp; Activity</h3>
 
 <p align="center">
   <img src="assets/stats.svg" width="100%" alt="GitHub stats: contributions, streaks, top languages and a dithered contribution heatmap">
 </p>
-<p align="center"><sub>built from the github graphql api by a github action</sub></p>
+<p align="center"><sub>Built from the GitHub GraphQL API by a GitHub Action</sub></p>
 
-<h3><img src="assets/icons/mail.svg" width="28" align="top" alt="">&nbsp; say hi</h3>
+<h3><img src="assets/icons/mail.svg" width="28" align="top" alt="">&nbsp; Contact</h3>
 
-```text
-$ contact --list
-  linkedin ..... linkedin.com/in/salah-eddine-m-hamda-bouloudani-82b75a28a
-  status ....... open to opportunities, devops / full-stack / automation
-```
+Open to opportunities in **DevOps**, **full-stack** and **automation**. The best way to reach me is LinkedIn.
 
 <p>
-  <a href="https://www.linkedin.com/in/salah-eddine-m-hamda-bouloudani-82b75a28a/"><img src="https://img.shields.io/badge/linkedin-connect-448FF4?style=flat-square&labelColor=10102B&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://www.linkedin.com/in/salah-eddine-m-hamda-bouloudani-82b75a28a/"><img src="https://img.shields.io/badge/LinkedIn-Connect-448FF4?style=for-the-badge&labelColor=10102B&logo=linkedin&logoColor=white" alt="Connect on LinkedIn"></a>
 </p>
 
 <p align="center"><sub><img src="assets/icons/heart.svg" width="14" align="center" alt=""> icons: <a href="https://github.com/vijayksingh/dither-icons">dither-icons</a> (MIT) · banner: a dither shader ported to python · 🇩🇿 → 🇫🇷</sub></p>
