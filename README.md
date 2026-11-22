@@ -104,7 +104,9 @@ Security and vulnerability management project, built during my internship at Oct
 
 And 15+ more sites, landing pages, CRMs and automations for training centres, consultants and local businesses.
 
-## 04 · Side projects <sub>Arabic UI</sub>
+## 04 · Side projects
+
+Arabic UI experiments: Arabic-first type, motion and playful interfaces.
 
 <table>
 <tr>
@@ -149,14 +151,14 @@ Hand-drawn React stickers with an Arabic soul.
 <!-- STATS:START -->
 <table>
 <tr>
-<td align="center" width="33%"><h2>1,091</h2>Contributions<br><sub>in the last year</sub></td>
-<td align="center" width="33%"><h2><ins>14 days</ins></h2>Current streak<br><sub>Nov 9 – Nov 22</sub></td>
-<td align="center" width="33%"><h2>14 days</h2>Longest streak<br><sub>Nov 9 – Nov 22</sub></td>
+<td align="center">&emsp;<h3>1,092</h3>&emsp;Contributions&emsp;<br><sub>in the last year</sub></td>
+<td align="center">&emsp;<h3><ins>14 days</ins></h3>&emsp;Current streak&emsp;<br><sub>Nov 9 – Nov 22</sub></td>
+<td align="center">&emsp;<h3>14 days</h3>&emsp;Longest streak&emsp;<br><sub>Nov 9 – Nov 22</sub></td>
 </tr>
 </table>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg">
-  <img src="assets/heatmap-light.svg" width="100%" alt="Contribution heatmap: 1091 contributions in the last year, one dithered blue square per day">
+  <img src="assets/heatmap-light.svg" width="100%" alt="Contribution heatmap: 1092 contributions in the last year, one dithered blue square per day">
 </picture>
 <!-- STATS:END -->

@@ -67,7 +67,7 @@ for (const [name, t] of Object.entries(THEMES)) writeFileSync(`assets/heatmap-${
 
 // ---- README block between the STATS markers --------------------------------------
 const td = (big, label, sub, accent) =>
-  `<td align="center" width="33%"><h2>${accent ? `<ins>${big}</ins>` : big}</h2>${label}<br><sub>${sub}</sub></td>`;
+  `<td align="center">&emsp;<h3>${accent ? `<ins>${big}</ins>` : big}</h3>&emsp;${label}&emsp;<br><sub>${sub}</sub></td>`;
 const block = `<!-- STATS:START -->
 <table>
 <tr>
