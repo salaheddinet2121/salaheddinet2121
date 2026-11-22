@@ -85,10 +85,10 @@ Arabic UI experiments: Arabic-first type, motion and playful interfaces.
 ## 05 · Stack
 
 **Web** &nbsp;<sub>TypeScript · JavaScript · React · Next.js · Astro · Tailwind · Node.js · HTML · CSS</sub><br>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts,js,react,nextjs,astro,tailwind,nodejs,html,css&theme=dark"><img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,astro,tailwind,nodejs,html,css&theme=light" width="332" height="32" alt="TypeScript, JavaScript, React, Next.js, Astro, Tailwind, Node.js, HTML, CSS"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Cjs%2Creact%2Cnextjs%2Castro%2Ctailwind%2Cnodejs%2Chtml%2Ccss&theme=dark"><img src="https://skillicons.dev/icons?i=ts%2Cjs%2Creact%2Cnextjs%2Castro%2Ctailwind%2Cnodejs%2Chtml%2Ccss&theme=light" width="332" height="32" alt="TypeScript, JavaScript, React, Next.js, Astro, Tailwind, Node.js, HTML, CSS"></picture>
 
 **DevOps** &nbsp;<sub>Docker · Coolify · Ansible · GitHub Actions · Cloudflare Workers · Linux · Shell · Git</sub><br>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=docker,ansible,githubactions,cloudflare,linux,bash,git&theme=dark"><img src="https://skillicons.dev/icons?i=docker,ansible,githubactions,cloudflare,linux,bash,git&theme=light" width="257" height="32" alt="Docker, Coolify, Ansible, GitHub Actions, Cloudflare Workers, Linux, Shell, Git"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=docker%2Cansible%2Cgithubactions%2Ccloudflare%2Clinux%2Cbash%2Cgit&theme=dark"><img src="https://skillicons.dev/icons?i=docker%2Cansible%2Cgithubactions%2Ccloudflare%2Clinux%2Cbash%2Cgit&theme=light" width="257" height="32" alt="Docker, Coolify, Ansible, GitHub Actions, Cloudflare Workers, Linux, Shell, Git"></picture>
 
 **Security** &nbsp;<sub>osquery · Elasticsearch · vulnerability management</sub><br>
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=elasticsearch&theme=dark"><img src="https://skillicons.dev/icons?i=elasticsearch&theme=light" width="32" height="32" alt="osquery, Elasticsearch, vulnerability management"></picture>
@@ -97,7 +97,7 @@ Arabic UI experiments: Arabic-first type, motion and playful interfaces.
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python&theme=dark"><img src="https://skillicons.dev/icons?i=python&theme=light" width="32" height="32" alt="Python, LLMs, AI agents, CrewAI, prompt engineering, LLMOps, web scraping"></picture>
 
 **Data &amp; cloud** &nbsp;<sub>Oracle · SQLite · AWS · Azure</sub><br>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=sqlite,aws,azure&theme=dark"><img src="https://skillicons.dev/icons?i=sqlite,aws,azure&theme=light" width="107" height="32" alt="Oracle, SQLite, AWS, Azure"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=sqlite%2Caws%2Cazure&theme=dark"><img src="https://skillicons.dev/icons?i=sqlite%2Caws%2Cazure&theme=light" width="107" height="32" alt="Oracle, SQLite, AWS, Azure"></picture>
 
 **Design** &nbsp;<sub>Figma · Canva · UI/UX · design systems · branding · Arabic (RTL), French and English layouts</sub><br>
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=figma&theme=dark"><img src="https://skillicons.dev/icons?i=figma&theme=light" width="32" height="32" alt="Figma, Canva, UI/UX, design systems, branding, Arabic (RTL), French and English layouts"></picture>
