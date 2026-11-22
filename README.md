@@ -151,14 +151,14 @@ Hand-drawn React stickers with an Arabic soul.
 <!-- STATS:START -->
 <table>
 <tr>
-<td align="center">&emsp;<h3>1,092</h3>&emsp;Contributions&emsp;<br><sub>in the last year</sub></td>
-<td align="center">&emsp;<h3><ins>14 days</ins></h3>&emsp;Current streak&emsp;<br><sub>Nov 9 – Nov 22</sub></td>
-<td align="center">&emsp;<h3>14 days</h3>&emsp;Longest streak&emsp;<br><sub>Nov 9 – Nov 22</sub></td>
+<td align="center"><h3>1,093</h3>&emsp;Contributions&emsp;<br><sub>in the last year</sub></td>
+<td align="center"><h3><ins>14 days</ins></h3>&emsp;Current streak&emsp;<br><sub>Nov 9 – Nov 22</sub></td>
+<td align="center"><h3>14 days</h3>&emsp;Longest streak&emsp;<br><sub>Nov 9 – Nov 22</sub></td>
 </tr>
 </table>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg">
-  <img src="assets/heatmap-light.svg" width="100%" alt="Contribution heatmap: 1092 contributions in the last year, one dithered blue square per day">
+  <img src="assets/heatmap-light.svg" width="100%" alt="Contribution heatmap: 1093 contributions in the last year, one dithered blue square per day">
 </picture>
 <!-- STATS:END -->
