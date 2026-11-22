@@ -26,13 +26,11 @@ jobs:
       - name: Build stats cards
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Optional: a fine-grained token with read access to your private repos,
-          # so the language bars count them too.
           GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
         run: node scripts/stats.mjs ${{ github.repository_owner }}
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats-light.svg assets/stats-dark.svg
+          git add README.md assets/heatmap-light.svg assets/heatmap-dark.svg
           git diff --cached --quiet || (git commit -m "Refresh stats card" && git push)
