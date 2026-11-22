@@ -66,16 +66,8 @@ function heatmap(t) {
 for (const [name, t] of Object.entries(THEMES)) writeFileSync(`assets/heatmap-${name}.svg`, heatmap(t));
 
 // ---- README block between the STATS markers --------------------------------------
-const td = (big, label, sub, accent) =>
-  `<td align="center"><h3>${accent ? `<ins>${big}</ins>` : big}</h3>&emsp;${label}&emsp;<br><sub>${sub}</sub></td>`;
 const block = `<!-- STATS:START -->
-<table>
-<tr>
-${td(cal.totalContributions.toLocaleString('en-US'), 'Contributions', 'in the last year')}
-${td(`${current.n} days`, 'Current streak', range(current), true)}
-${td(`${longest.n} days`, 'Longest streak', range(longest))}
-</tr>
-</table>
+**${cal.totalContributions.toLocaleString('en-US')}** contributions in the last year &nbsp;·&nbsp; **<ins>${current.n} days</ins>** current streak <sub>${range(current)}</sub> &nbsp;·&nbsp; **${longest.n} days** longest streak <sub>${range(longest)}</sub>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg">
