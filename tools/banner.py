@@ -119,8 +119,8 @@ def text_layer(cols, rows):
     sub = ImageFont.truetype(MONO_BOLD, 17)
     small = ImageFont.truetype(MONO, 14)
     rows_txt = [
-        (sub, "> devops enthusiast · full-stack developer · software engineer_", TEXT),
-        (small, "automation · prompt engineering · ai agents · security  //  dz → montpellier, fr", MUTED),
+        (sub, "> ai integrator · full-stack developer · devops_", TEXT),
+        (small, "automation · ai agents · ui design · security  //  dz → montpellier, fr", MUTED),
     ]
     y = y0 + block_h + 26
     half = max(block_w, *(draw.textlength(t, font=f) for f, t, _ in rows_txt)) / 2

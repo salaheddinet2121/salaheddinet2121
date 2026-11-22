@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.gif" width="100%" alt="SALAH EDDINE: devops enthusiast, full-stack developer, software engineer. Written in ASCII blocks over a blue dithered wave.">
+  <img src="assets/banner.gif" width="100%" alt="SALAH EDDINE: AI integrator, full-stack developer, DevOps. Written in ASCII blocks over a blue dithered wave.">
 </p>
 
 <h3>I build web products end to end, and <ins>automate</ins> everything around them.</h3>
