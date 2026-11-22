@@ -4,10 +4,11 @@
 
 <h3>I build web products end to end, and <ins>automate</ins> everything around them.</h3>
 
-DevOps enthusiast, full-stack developer and software engineer. I ship client websites, automation pipelines and AI agents, with a soft spot for security and for Arabic UI design.
+AI integrator and full-stack developer with a DevOps background. I ship client websites, automation pipelines and AI agents, with a soft spot for security and for Arabic UI design.
 
 <img src="https://img.shields.io/badge/%E2%97%8F_Open_to_opportunities-269A5A?style=flat-square" alt="Status: open to opportunities"> &nbsp;
 <a href="https://www.linkedin.com/in/salah-eddine-m-hamda-bouloudani-82b75a28a/">LinkedIn</a> &nbsp;·&nbsp;
+<a href="https://qualiogen.fr">qualiogen.fr</a> &nbsp;·&nbsp;
 <a href="https://scrollia.fr">scrollia.fr</a> &nbsp;·&nbsp;
 <a href="https://courageformation.fr">courageformation.fr</a>
 
@@ -16,11 +17,18 @@ DevOps enthusiast, full-stack developer and software engineer. I ship client web
 > My studio: landing pages and local SEO for small businesses. <sub>velytrix.fr · launching soon</sub>
 
 - **Based in** &nbsp;Montpellier, France 🇫🇷 <sub>from Algeria 🇩🇿</sub>
-- **Focus** &nbsp;Automation, AI agents and security
+- **Focus** &nbsp;AI integration, automation and security
 - **Track record** &nbsp;20+ projects delivered for clients
 - **Languages** &nbsp;Arabic, French and English
 
 ## 01 · Experience
+
+### AI Integrator & Full-Stack Developer · [Qualiogen](https://qualiogen.fr) &nbsp;<img src="https://img.shields.io/badge/Current-448FF4?style=flat-square" alt="Current">
+<sub>AI platform that prepares training centres for their Qualiopi certification</sub>
+
+- Integrating AI into the product: evidence generation, smart audit and auditor-ready reports
+- Full-stack development across the platform
+- Redesigned the UI
 
 ### Software Developer · Octodet
 <sub>Jan → Jun 2025 · Internship · Remote</sub>
@@ -80,7 +88,8 @@ Arabic UI experiments: Arabic-first type, motion and playful interfaces.
 
 - <img src="assets/projects/florii-logo.svg" width="20" align="top" alt="Florii logo"> &nbsp;**Florii** · فلوري · Type a name and its letters grow into a garden, Arabic first.
 - <img src="assets/projects/easticker-logo.svg" width="20" align="top" alt="Easticker logo"> &nbsp;**Easticker** · إيستيكر · Hand-drawn React stickers with an Arabic soul.
-- <img src="https://img.shields.io/badge/Coming_soon-6B675F?style=flat-square" alt="Coming soon"> &nbsp;More Arabic UI projects on the way.
+
+<sub>COMING SOON</sub> &nbsp;More Arabic UI projects on the way.
 
 ## 05 · Stack
 
